@@ -2,16 +2,20 @@ const { response, request } = require('express');
 
 const usuariosGet = (req = request, res = response) => {    
 
-    const { q, nombre, apikey } = req.query;
+// const { q, nombre, apikey } = req.query;
+    res.sendFile( __dirname + '/public/index.html' );
+}
+// const usuariosGet = (req = request, res = response) => {    
 
-    res.json({                
-        msg: 'get API - controlador',
-        q,
-        nombre,
-        apikey
-        
-    });
-}    
+// const { q, nombre, apikey } = req.query;
+//     res.json({                
+//         msg: 'get API - controlador',
+//         q,
+//         nombre,
+//         apikey        
+//     });
+// }
+
 const usuariosPost = (req, res) => {
     const {nombre, edad} = req.body;
     res.json({                
@@ -20,6 +24,7 @@ const usuariosPost = (req, res) => {
         edad
     });  
 }
+
 const usuariosPut = (req, res) => {
     const { id } = req.params;  
     res.json({                
